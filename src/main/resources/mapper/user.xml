@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaojun.self.dao.UserMapper">
+    <sql id="tableName">
+        t_user
+    </sql>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.xiaojun.self.po.UserPo">
+        INSERT INTO
+        <include refid="tableName"/>
+        (
+        id,
+        phone,
+        name,
+        nickName,
+        password
+        )
+        VALUES
+        (
+        #{id},
+        #{phone},
+        #{name},
+        #{nickName},
+        #{password}
+        )
+    </insert>
+</mapper>
